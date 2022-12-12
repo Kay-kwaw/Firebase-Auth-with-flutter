@@ -90,6 +90,9 @@ class _HomepageState extends State<Homepage> {
                                     padding: const EdgeInsets.symmetric(
                                         vertical: 10, horizontal: 30),
                                     child: TextFormField(
+                                      validator: (val) => val!.isEmpty
+                                          ? "Please enter a valid email"
+                                          : null,
                                       onChanged: (val) {
                                         setState(() {
                                           fullname = val.toString();
@@ -122,6 +125,9 @@ class _HomepageState extends State<Homepage> {
                                     padding: const EdgeInsets.symmetric(
                                         vertical: 5, horizontal: 30),
                                     child: TextFormField(
+                                      validator: (val) => val!.length > 6
+                                          ? 'Weak password'
+                                          : null,
                                       onChanged: (val) {
                                         setState(() {
                                           email = val.toString();
